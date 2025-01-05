@@ -1,0 +1,109 @@
+@import './fonts.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --theme-color: #ffcc00;
+    --theme-color-text: #27272a;
+    --accent-color: #0369a1;
+    --accent-color-text: #ffffff;
+    --accent-color-1: #075985;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --theme-color: #ffcc00;
+        --theme-color-text: #27272a;
+        --accent-color: #fcd34d;
+        --accent-color-text: #27272a;
+        --accent-color-1: #fbbf24;
+    }
+}
+
+.active {
+    @apply bg-gray-800;
+    @apply text-white;
+}
+
+* {
+    font-family: PT Sans,ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+}
+
+@layer components {
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    textarea {
+        @apply block w-full rounded-md border-0 py-2 text-zinc-900 dark:text-white dark:bg-white/5 shadow-sm ring-1 ring-inset ring-zinc-300 dark:ring-white/10 placeholder:text-zinc-400 focus:ring-2 focus:ring-inset focus:ring-[var(--accent-color)] sm:text-sm sm:leading-6;
+    }
+
+    label {
+        @apply block font-semibold text-zinc-500 dark:text-zinc-300 mb-1;
+    }
+
+    .btn-primary {
+        @apply inline-flex items-center gap-x-1.5 rounded-md bg-[var(--accent-color)] px-3 py-2 text-sm font-semibold text-[var(--accent-color-text)] shadow-sm ring-1 ring-inset ring-black/10 hover:bg-[var(--accent-color-1)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-color)] transition ease-in-out duration-300;
+    }
+
+    .btn-secondary {
+        @apply inline-flex items-center gap-x-1.5 rounded-md bg-emerald-800 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-white/10 hover:bg-emerald-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800 transition ease-in-out duration-300;
+    }
+
+    .btn-neutral {
+        @apply inline-flex items-center gap-x-1.5 rounded-md bg-zinc-200 dark:bg-zinc-600 px-3 py-2 text-sm font-semibold text-zinc-800 dark:text-white shadow-sm ring-1 ring-inset ring-black/10 hover:bg-zinc-300 dark:hover:bg-zinc-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-600 transition ease-in-out duration-300 disabled:bg-zinc-100 disabled:dark:bg-zinc-700 disabled:text-zinc-500 disabled:cursor-not-allowed;
+    }
+
+    .btn-table-primary {
+        @apply inline-flex items-center gap-x-1.5 rounded-md bg-[var(--accent-color)] px-2.5 py-1.5 text-sm font-semibold text-[var(--accent-color-text)] shadow-sm hover:bg-[var(--accent-color-1)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-color)] transition ease-in-out duration-300;
+    }
+
+    .btn-table-danger {
+        @apply inline-flex items-center gap-x-1.5 rounded-md bg-red-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-red-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 transition ease-in-out duration-300;
+    }
+
+    .sidebar-nav-button {
+        @apply text-zinc-800 dark:text-zinc-50 hover:bg-zinc-200 dark:hover:bg-zinc-700 flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold transition ease-in-out duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-color)];
+    }
+
+    .sidebar-nav-button svg {
+        @apply text-zinc-500 dark:text-zinc-300 h-6 w-6 shrink-0;
+    }
+
+    table {
+        @apply min-w-full divide-y divide-gray-300 dark:divide-zinc-900;
+    }
+
+    table thead {
+        @apply bg-zinc-100 dark:bg-zinc-600;
+    }
+
+    table tbody {
+        @apply divide-y divide-zinc-300 dark:divide-zinc-800 bg-zinc-50 dark:bg-zinc-700;
+    }
+
+    table thead th {
+        @apply px-4 py-3 text-left text-sm font-semibold text-zinc-800 dark:text-white;
+    }
+
+    table thead th:first-of-type {
+        @apply pl-6 sm:pl-5 pr-4;
+    }
+
+    table thead th:last-of-type {
+        @apply pl-4 pr-6 sm:pr-5;
+    }
+
+    table tbody td {
+        @apply whitespace-pre-wrap align-top px-4 py-3 text-sm text-zinc-800 dark:text-white;
+    }
+
+    table tbody td:first-of-type {
+        @apply pl-6 sm:pl-5 pr-4
+    }
+
+    table tbody td:last-of-type {
+        @apply pl-4 pr-6 sm:pr-5
+    }
+}

@@ -1,0 +1,6 @@
+client/dist/
+client/node_modules/
+
+server/config/config.json
+server/cert/
+server/tmp/
